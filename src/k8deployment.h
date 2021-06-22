@@ -25,7 +25,7 @@ bool check_environment(char *url, const char *token, char *branch);
 //git
 void check_error(int error_code, const char *action);
 void use_remote(git_repository *repo,git_credential_userpass_payload user_pass,char *name,char *branch, char oid[41]);
-int check_clone_or_pull_repository(char *dir_name, char *url, const char *token, char *branch, char *wait);
+int check_clone_or_pull_repository(char *dir_name, char *url, const char *git_user, const char *token, char *branch, char *wait);
 
 //deploy
 int isFile(const char *path);
