@@ -36,7 +36,7 @@ void use_remote(git_repository *repo,git_credential_userpass_payload user_pass,c
     git_remote_free(remote);
 }
 
-int check_clone_or_pull_repository(char *dir_name, char *url, const char *token, char *branch, char *wait){
+int check_clone_or_pull_repository(char *dir_name, char *url, const char *git_user, const char *token, char *branch, char *wait){
     int error;
 
     int deploy = 0;
@@ -49,7 +49,7 @@ int check_clone_or_pull_repository(char *dir_name, char *url, const char *token,
     git_remote *remote = NULL;
 
     git_credential_userpass_payload user_pass = {
-            token, ""
+           git_user, token
     };
 
     const char *path = "deployment";
