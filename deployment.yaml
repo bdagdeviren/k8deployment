@@ -1,0 +1,19 @@
+wait: 5
+deployments:
+  - name: burak
+    enable: true
+    path: deployment/app.yaml
+    monitoring:
+      - type: health
+        url: /actuator/health
+      - type: prometheus
+        url: /actuator/prometheus
+  - name: burak
+    enable: false
+    path: deployment/app.yaml
+    monitoring:
+      - type: health
+        url: /actuator/health
+      - type: prometheus
+        url: /actuator/prometheus
+
