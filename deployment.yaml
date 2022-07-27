@@ -1,4 +1,4 @@
-wait: 5
+waitTime: 5
 deployments:
   - name: burak
     enable: true
@@ -8,6 +8,9 @@ deployments:
         url: /actuator/health
       - type: prometheus
         url: /actuator/prometheus
+    wait:
+      name: burak
+      namespace: burak
   - name: burak
     enable: false
     path: deployment/app.yaml
